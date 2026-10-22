@@ -1,0 +1,21 @@
+# Dependências do Data Intake Validator.
+#
+# Versões exatas, e não faixas: o projeto é demonstrativo e precisa se comportar
+# igual toda vez que for apresentado. O gerador em scripts/generate_sales.py, em
+# particular, depende de um comportamento específico do pandas 3.
+#
+# Já pagamos por não fixar isto uma vez: os arquivos .xlsx gerados por versões
+# diferentes de pandas/openpyxl têm bytes diferentes, e a lição registrada é
+# comparar conteúdo, nunca hash. Fixar as versões reduz a superfície do problema.
+#
+# Instalar com:  python -m pip install -r requirements.txt
+
+pandas==3.0.6
+openpyxl==3.1.5
+numpy==2.5.3
+
+# SDK da Databricks: usado pelos scripts de preparação da live
+# (executar_sql.py e verificar_estado_live.py) e, no prompt 04, pela ponte que
+# converte os .xlsx do Volume em .csv. A autenticação vem do perfil do CLI
+# (~/.databrickscfg) — nunca de credencial no código.
+databricks-sdk==0.146.0

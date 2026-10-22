@@ -1,0 +1,62 @@
+# ---------------------------------------------------------------------------
+# Segredos e configuração local
+# ---------------------------------------------------------------------------
+
+# Guarda o token da API usado para rodar o Claude Code neste projeto.
+.claude/settings.local.json
+
+# Config do CLI Databricks, caso alguém aponte DATABRICKS_CONFIG_FILE para cá.
+# O padrão é ~/.databrickscfg, fora do repositório.
+.databrickscfg
+.env
+.env.*
+
+# ---------------------------------------------------------------------------
+# Skills Databricks vendorizadas
+# ---------------------------------------------------------------------------
+
+# ~6,8 MB em 636 arquivos, instalados a partir do repositório
+# databricks/databricks-agent-skills. As versões exatas estão fixadas em
+# .ai-dev-kit/skills.lock — mantenha .ai-dev-kit/ versionado e reinstale as
+# skills pela ferramenta em vez de commitar as cópias.
+.agents/skills/
+.github/skills/
+.claude/skills/
+
+# Estado local da instalação, regenerado pela ferramenta.
+.databricks/
+
+# ---------------------------------------------------------------------------
+# Python
+# ---------------------------------------------------------------------------
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ---------------------------------------------------------------------------
+# Databricks
+# ---------------------------------------------------------------------------
+
+# Artefatos de build do Databricks Asset Bundle. O databricks.yml É versionado.
+.bundle/
+
+# ---------------------------------------------------------------------------
+# SO e editores
+# ---------------------------------------------------------------------------
+
+Thumbs.db
+Desktop.ini
+.DS_Store
+.idea/
+
+# Nota: os 5 arquivos .xlsx em data/output/ SÃO versionados de propósito —
+# a demo sai pronta para rodar sem precisar gerar o dataset antes.
